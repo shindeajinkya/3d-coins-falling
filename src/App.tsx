@@ -1,17 +1,17 @@
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+import { Canvas, useFrame } from "@react-three/fiber";
+// import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
 import { Mesh } from "three";
-import { Perf } from "r3f-perf";
+// import { Perf } from "r3f-perf";
 import { Physics, RigidBody } from "@react-three/rapier";
 
 function Box({ z }: { z: number }) {
   const { nodes, materials } = useGLTF("/coin.glb");
 
-  const { viewport, camera } = useThree();
-  const { width, height } = viewport.getCurrentViewport(camera, [0, 0, z]);
+  // const { viewport, camera } = useThree();
+  // const { width, height } = viewport.getCurrentViewport(camera, [0, 0, z]);
 
   const [data] = useState({
     // x: THREE.MathUtils.randFloatSpread(2),
@@ -60,7 +60,7 @@ function Box({ z }: { z: number }) {
   );
 }
 
-function App({ count = 150, depth = 120 }) {
+function App({ count = 150 }) {
   // const [count, setCount] = useState(0);
 
   return (
