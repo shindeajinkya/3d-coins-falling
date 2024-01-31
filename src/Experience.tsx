@@ -53,7 +53,7 @@ function Box({ z }: { z: number }) {
   });
 
   return (
-    <RigidBody colliders="hull" mass={1} restitution={0.8}>
+    <RigidBody colliders="hull" mass={1} restitution={0.75}>
       {/* <group
         ref={coin}
         scale={0.1}
