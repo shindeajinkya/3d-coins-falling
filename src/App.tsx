@@ -7,7 +7,7 @@ import { Experience } from "./Experience";
 function App({ count = 15 }) {
   return (
     <>
-      <Leva collapsed />
+      <Leva collapsed hidden />
       <Canvas
         gl={{ alpha: false }}
         shadows={true}
