@@ -34,8 +34,10 @@ function Box({ z }: { z: number }) {
 
   const coin = useRef<THREE.Group<THREE.Object3DEventMap>>(null);
 
-  const coinMaterial = new THREE.MeshPhongMaterial({
+  const coinMaterial = new THREE.MeshStandardMaterial({
     color: colors[Math.floor(Math.random() * colors.length)],
+    metalness: 0.7,
+    roughness: 0.5,
   });
 
   useFrame(() => {
@@ -53,7 +55,7 @@ function Box({ z }: { z: number }) {
   });
 
   return (
-    <RigidBody colliders="hull" mass={1} restitution={0.75}>
+    <RigidBody colliders="hull" mass={1} restitution={0.8} canSleep>
       {/* <group
         ref={coin}
         scale={0.1}
@@ -100,11 +102,11 @@ export const Experience: FC<IProps> = ({ count = 0 }) => {
   return (
     <>
       <color attach="background" args={["lightpink"]} />
-      <ambientLight color={"white"} intensity={1} />
+      <ambientLight color={"white"} intensity={2} />
       <directionalLight
         ref={directionalLightRef}
         position={[10, 10, 10]}
-        intensity={1}
+        intensity={4}
         castShadow
         shadow-mapSize={[1024, 1024]}
         shadow-camera-near={1}
@@ -140,7 +142,7 @@ export const Experience: FC<IProps> = ({ count = 0 }) => {
           </RigidBody>
         </Physics>
 
-        <Environment preset="sunset" />
+        {/* <Environment preset="sunset" /> */}
         {/* <EffectComposer>
           <DepthOfField
             target={[0, 0, depth / 2]}
