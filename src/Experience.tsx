@@ -1,4 +1,4 @@
-import { Environment, Text } from "@react-three/drei";
+import { Text } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Physics, RigidBody } from "@react-three/rapier";
 import { useControls } from "leva";

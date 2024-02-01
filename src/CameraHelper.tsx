@@ -1,7 +1,6 @@
 import { useThree } from "@react-three/fiber";
 import { useControls } from "leva";
 import { FC, useEffect } from "react";
-import * as THREE from "three";
 
 interface IProps {}
 
