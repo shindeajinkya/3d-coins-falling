@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
 import { Experience } from "./Experience";
 
-function App({ count = 15 }) {
+function App({ count = 10 }) {
   return (
     <>
       <Leva collapsed hidden />

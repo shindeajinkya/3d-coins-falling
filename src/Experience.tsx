@@ -1,8 +1,8 @@
 import { Environment, Text } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { Physics, RigidBody } from "@react-three/rapier";
 import { useControls } from "leva";
-import { FC, Suspense, useRef, useState } from "react";
+import { FC, Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { CameraHelper } from "./CameraHelper";
 import useScreenWidth from "./hooks/useScreenWidth";
@@ -96,6 +96,12 @@ export const Experience: FC<IProps> = ({ count = 0 }) => {
   const { colorGround } = useControls("FloorColor", {
     colorGround: "lightpink",
   });
+
+  const { camera } = useThree();
+
+  useEffect(() => {
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+  }, []);
 
   //   useHelper(directionalLightRef, THREE.DirectionalLightHelper, 1);
 

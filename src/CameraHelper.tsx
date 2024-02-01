@@ -16,17 +16,13 @@ export const CameraHelper: FC<IProps> = () => {
       value: {
         x: 0,
         y: 8,
-        z: 5,
+        z: 0,
       },
       step: 0.01,
     },
   });
 
   const { camera } = useThree();
-
-  useEffect(() => {
-    camera.lookAt(new THREE.Vector3(0, -5, 2));
-  }, []);
 
   useEffect(() => {
     console.log(position);
