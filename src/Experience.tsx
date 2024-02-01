@@ -104,7 +104,7 @@ export const Experience: FC<IProps> = ({ count = 0 }) => {
       <directionalLight
         ref={directionalLightRef}
         position={[10, 10, 10]}
-        intensity={4}
+        intensity={1}
         castShadow
         shadow-mapSize={[1024, 1024]}
         shadow-camera-near={1}
