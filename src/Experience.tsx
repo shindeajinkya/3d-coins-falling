@@ -135,7 +135,7 @@ export const Experience: FC<IProps> = ({ count = 0 }) => {
         नमस्कार्
       </Text>
       <Suspense>
-        <Physics debug={false} gravity={[0, -9.08, 0]}>
+        <Physics debug={false} gravity={[0, -1.62, 0]}>
           {Array.from({ length: count }, (_, i) => (
             <Box key={i} z={i} />
           ))}
